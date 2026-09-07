@@ -1,0 +1,99 @@
+.shop-page {
+  padding: 40px;
+  background: var(--color-cream);
+}
+
+.shop-inner {
+  max-width: 1340px;
+  margin: 0 auto;
+}
+
+.shop-header {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.shop-title {
+  font-family: var(--font-heading);
+  font-size: clamp(32px, 4vw, 48px);
+  font-weight: 600;
+  color: var(--color-text-dark);
+  margin-bottom: 12px;
+}
+
+.shop-subtitle {
+  font-size: 16px;
+  color: var(--color-text-body);
+}
+
+.shop-filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: center;
+  margin-bottom: 40px;
+}
+
+.filter-btn {
+  padding: 10px 24px;
+  border-radius: var(--radius-full);
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--color-text-body);
+  background: var(--color-white);
+  border: 1.5px solid var(--color-border);
+  transition: all var(--transition);
+}
+
+.filter-btn:hover {
+  border-color: var(--color-gold);
+  color: var(--color-gold);
+}
+
+.filter-btn.active {
+  background: linear-gradient(135deg, var(--color-gold) 0%, var(--color-gold-dark) 100%);
+  border-color: var(--color-gold);
+  color: var(--color-white);
+  box-shadow: var(--shadow-gold);
+}
+
+.shop-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 24px;
+}
+
+.shop-loading,
+.shop-error,
+.shop-empty {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+  padding: 80px 0;
+  color: var(--color-text-muted);
+  font-size: 16px;
+}
+
+.shop-error {
+  color: var(--color-rose);
+}
+
+.loading-spinner {
+  width: 36px;
+  height: 36px;
+  border: 3px solid var(--color-gold-light);
+  border-top-color: var(--color-gold);
+  border-radius: 50%;
+  animation: spin 0.8s linear infinite;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+@media (max-width: 768px) {
+  .shop-page {
+    padding: 20px;
+  }
+}

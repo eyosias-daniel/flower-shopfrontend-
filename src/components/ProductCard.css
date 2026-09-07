@@ -1,0 +1,101 @@
+.product-card {
+  display: block;
+  background: var(--color-white);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  transition: all var(--transition-slow);
+  border: 1px solid var(--color-border-light);
+  position: relative;
+}
+
+.product-card::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: var(--radius-lg);
+  border: 1px solid transparent;
+  transition: border-color var(--transition);
+  pointer-events: none;
+}
+
+.product-card:hover {
+  transform: translateY(-8px);
+  box-shadow: var(--shadow-xl);
+}
+
+.product-card:hover::after {
+  border-color: var(--color-gold);
+}
+
+.product-card-image {
+  aspect-ratio: 4/3;
+  overflow: hidden;
+  background: linear-gradient(135deg, var(--color-pink-light) 0%, var(--color-cream) 100%);
+  position: relative;
+}
+
+.product-card-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.product-card:hover .product-card-image img {
+  transform: scale(1.08);
+}
+
+.product-card-placeholder {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, var(--color-pink-light) 0%, var(--color-cream) 100%);
+}
+
+.product-card-fallback {
+  width: 80%;
+  height: 80%;
+  object-fit: contain;
+}
+
+.product-card-body {
+  padding: 20px 24px 24px;
+}
+
+.product-card-name {
+  font-family: var(--font-heading);
+  font-size: 18px;
+  font-weight: 600;
+  color: var(--color-text-dark);
+  margin-bottom: 12px;
+  line-height: 1.3;
+}
+
+.product-card-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.product-card-price {
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--color-gold);
+  letter-spacing: 0.3px;
+}
+
+.product-card-action {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--color-text-muted);
+  transition: color var(--transition);
+}
+
+.product-card:hover .product-card-action {
+  color: var(--color-gold);
+}

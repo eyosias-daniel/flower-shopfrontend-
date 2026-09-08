@@ -183,8 +183,8 @@ function GiftBasket() {
                     return (
                       <div className="gb-product-card" key={product.documentId}>
                         <div className="gb-product-img">
-                          {product.Image?.url ? (
-                            <img src={`http://localhost:1337${product.Image.url}`} alt={product.name} />
+                          {product.image?.url ? (
+                            <img src={`http://localhost:1337${product.image.url}`} alt={product.name} />
                           ) : product.localImage ? (
                             <img src={product.localImage} alt={product.name} />
                           ) : (
